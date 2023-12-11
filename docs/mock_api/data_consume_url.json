@@ -1,0 +1,25 @@
+{
+    "status": true,
+    "data": {
+        "3mb": {
+            "url": "http://",
+            "delay": 1000
+        },
+        "5mb": {
+            "url": "http://",
+            "delay": 1000
+        },
+        "10mb": {
+            "url": "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1280_10MG.mp4",
+            "delay": 20000
+        },
+        "25mb": {
+            "url": "http://",
+            "delay": 1000
+        },
+        "50mb": {
+            "url": "http://",
+            "delay": 1000
+        }
+    }
+}

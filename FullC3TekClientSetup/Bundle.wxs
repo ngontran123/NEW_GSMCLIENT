@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+ xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<Bundle Name="FullC3TekClientSetup" Version="1.0.0.0" Manufacturer="c3tek" UpgradeCode="ede490de-2f4c-4fe1-ab32-1910f4af18ba">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+
+		<Chain>
+			<!-- TODO: Define the list of chained packages. -->
+			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
+			<PackageGroupRef Id="VisualCPlusPlusRedist"/>
+
+			<!-- Install Application -->
+		</Chain>
+
+	</Bundle>
+
+	<Fragment>
+		<util:RegistrySearch
+		  Id="VCPLUSPLUS2013"
+		  Variable="VCPLUSPLUS2013"
+		  Root="HKLM"
+		  Key="SOFTWARE\Microsoft\VisualStudio\12.0\VC\Runtimes\x86"
+		  Value="Installed"
+		  Result="value" />
+	</Fragment>
+
+	<Fragment>
+		<util:RegistrySearchRef Id="VCPLUSPLUS2013"/>
+		<WixVariable Id="VcPPRedistDetectCondition" Value="VCPLUSPLUS2013 >= 1" Overridable="yes" />
+		<WixVariable Id="VcPPRedistInstallCondition" Value="" Overridable="yes" />
+		<WixVariable Id="VcPPRedistPackageDirectory" Value="VisualCPlusPlus\" Overridable="yes" />
+		<PackageGroup Id="VisualCPlusPlusRedist">
+			<ExePackage
+				DisplayName="Microsoft Visual C++ 2013"
+				InstallCommand="/q /norestart"
+				RepairCommand="/q /repair /norestart"
+				UninstallCommand="/uninstall /q /norestart"
+				PerMachine="yes"
+				DetectCondition="!(wix.VcPPRedistDetectCondition)"
+				InstallCondition="!(wix.VcPPRedistInstallCondition)"
+				Id="VisualCPlusPlusRedist"
+				Vital="yes"
+				Permanent="yes"
+				LogPathVariable="VcRedistFullLog"
+				Compressed="no"
+				Name="!(wix.VcPPRedistPackageDirectory)vcredist_x86.exe"
+				SourceFile="!(wix.VcPPRedistPackageDirectory)vcredist_x86.exe"
+				DownloadUrl="https://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x86.exe"
+          >
+			</ExePackage>
+		</PackageGroup>
+	</Fragment>
+	
+</Wix>

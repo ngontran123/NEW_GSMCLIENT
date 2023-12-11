@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="add_more_ussd_after" xml:space="preserve">
+    <value>Thêm 1 lệnh USSD dưới dòng</value>
+  </data>
+  <data name="auto_off" xml:space="preserve">
+    <value>Đã tắt auto</value>
+  </data>
+  <data name="auto_on" xml:space="preserve">
+    <value>Đã bật auto</value>
+  </data>
+  <data name="balance" xml:space="preserve">
+    <value>Số dư: </value>
+  </data>
+  <data name="busy_or_no_carrier" xml:space="preserve">
+    <value>Máy bận</value>
+  </data>
+  <data name="cannot_check_version" xml:space="preserve">
+    <value>Vui lòng cập nhật phiên bản mới để sử dụng. Hotline 0917.111.666</value>
+  </data>
+  <data name="check_excel_file" xml:space="preserve">
+    <value>Vui lòng kiểm tra lại nội dung file Excel</value>
+  </data>
+  <data name="choose_sim_dashboard_to_use" xml:space="preserve">
+    <value>Vui lòng chọn sim cần gửi tin nhắn (Giữ ctrl hoặc shift để chọn nhiều)</value>
+  </data>
+  <data name="comfirm" xml:space="preserve">
+    <value>Xác nhận</value>
+  </data>
+  <data name="comfirm_reset_all_result" xml:space="preserve">
+    <value>Các kết quả sẽ bị reset, bạn có chắc lựa chọn?</value>
+  </data>
+  <data name="connected" xml:space="preserve">
+    <value>Đã kết nối</value>
+  </data>
+  <data name="custom_prefix_port" xml:space="preserve">
+    <value>Cổng</value>
+  </data>
+  <data name="delete_all" xml:space="preserve">
+    <value>Xóa toàn bộ</value>
+  </data>
+  <data name="disconnected" xml:space="preserve">
+    <value>Đã ngắt kết nối</value>
+  </data>
+  <data name="empty_feedback" xml:space="preserve">
+    <value>Vui lòng nhập nội dung cần góp ý!</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="error_read_another_soft" xml:space="preserve">
+    <value>Lỗi xảy ra khi đọc file, vui lòng chọn file khác hoặc tắt mở file hiện tại trên các phần mềm khác</value>
+  </data>
+  <data name="fail" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="import_success" xml:space="preserve">
+    <value>Đã import thành công, có {0} bản ghi USSD trống hoặc cổng không có trong danh sách cổng đã chọn.</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="input_phone_number" xml:space="preserve">
+    <value>Nhập số điện thoại</value>
+  </data>
+  <data name="invalid_login" xml:space="preserve">
+    <value>Tài khoản hoặc mật khẩu không đúng</value>
+  </data>
+  <data name="in_queue" xml:space="preserve">
+    <value>Trong hàng đợi</value>
+  </data>
+  <data name="is_bought_modem" xml:space="preserve">
+    <value>Đã mua modem</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="logining" xml:space="preserve">
+    <value>Đang đăng nhập</value>
+  </data>
+  <data name="login_subscription" xml:space="preserve">
+    <value>Vui lòng mua một gói để sử dụng Tool!</value>
+  </data>
+  <data name="newer_version" xml:space="preserve">
+    <value>Đã có phiên bản mới cập nhật. Bạn vui lòng truy cập lamsim.biz để xem thông tin cập nhật, download và cài đặt phiên bản mới nhất. Xin chân thành cảm ơn!  Hotline 0917.111.666</value>
+  </data>
+  <data name="not_bought_modem" xml:space="preserve">
+    <value>Chưa mua modem</value>
+  </data>
+  <data name="no_found_port" xml:space="preserve">
+    <value>Không tìm thấy cổng</value>
+  </data>
+  <data name="no_subscription_permission" xml:space="preserve">
+    <value>Bạn cần nâng cấp gói để sử dụng tính năng này</value>
+  </data>
+  <data name="port" xml:space="preserve">
+    <value>Cổng</value>
+  </data>
+  <data name="processed" xml:space="preserve">
+    <value>Đã xử lý</value>
+  </data>
+  <data name="processing" xml:space="preserve">
+    <value>Đang xử lý</value>
+  </data>
+  <data name="question_comfirm_delete_all" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa tất cả?</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="saved" xml:space="preserve">
+    <value>Đã lưu</value>
+  </data>
+  <data name="sms_error_connection" xml:space="preserve">
+    <value>Lỗi kết nối</value>
+  </data>
+  <data name="sms_error_send" xml:space="preserve">
+    <value>Lỗi gửi SMS</value>
+  </data>
+  <data name="sms_success_no_state" xml:space="preserve">
+    <value>Thành công, không rõ trạng thái nhận</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>Thành công</value>
+  </data>
+  <data name="thanks_feedback" xml:space="preserve">
+    <value>Cảm ơn bạn đã góp ý!\nChúng tôi xin ghi nhận và phản hồi lại sớm nhất!</value>
+  </data>
+  <data name="wait_update_imei" xml:space="preserve">
+    <value>Vui lòng đợi trong giây lát để hệ thống cập nhật IMEI</value>
+  </data>
+  <data name="wait_upload_file" xml:space="preserve">
+    <value>Vui lòng đợi modem nạp xong dữ liệu, việc truyền file có thể lâu do tương tác với thiết bị phần cứng. Hãy đảm bảo truyền file hoàn tất trước khi sử dụng các tính năng khác</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>Cảnh báo</value>
+  </data>
+  <data name="warning_consume_condition" xml:space="preserve">
+    <value>Vui lòng kiểm tra lại kết nối internet của máy hoặc chắc chắn là bạn đã mua modem 4G của C3TEK</value>
+  </data>
+</root>

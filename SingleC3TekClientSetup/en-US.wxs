@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="TARGETDIR">
+            <Component Id="cmp8DC41FBDD17A94A2AE272FB3310F1577" Guid="{27BB4C72-B1B6-4C24-89FB-EA6F3A863C49}">
+                <File Id="filAF6E377DF7F992D72435346BA82396A4" KeyPath="yes" Source="SourceDir\C3TekClient.resources.dll" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+</Wix>

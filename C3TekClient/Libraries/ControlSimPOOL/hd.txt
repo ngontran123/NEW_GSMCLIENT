@@ -1,0 +1,6 @@
+#SWITCH sang channel 2 SIM 3
+.\ControlSimPool.exe -p COM201 -c 02 -i 0003
+#SWITCH sang channel 1 SIM 1
+.\ControlSimPool.exe -p COM201 -c 01 -i 0001
+#RESET ve toan bo sim 1
+.\ControlSimPool.exe -p COM201 -rs true 

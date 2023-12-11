@@ -1,0 +1,2 @@
+{"data":{"success":true,"message":"Th\u00e0nh c\u00f4ng","command":"RES_GET_LIST_TASK","affect_key":19839,"data":[{"TASK_ID":221,"type":"MULTI_USSD","serial":"89840200011105915746","content":"{\"to\":\"*123#|1\"}","status":0,"message_comment":null,"message_completed":null}]}}
+{"data":{"success":true,"message":"Th\u00e0nh c\u00f4ng","command":"RES_GET_LIST_TASK","affect_key":19870,"data":[{"TASK_ID":222,"type":"CONSUME_DATA","serial":"89840200010670046440","content":"{\"to\":\"3\"}","status":0,"message_comment":null,"message_completed":null}]}}

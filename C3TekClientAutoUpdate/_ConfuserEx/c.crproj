@@ -1,0 +1,21 @@
+<project outputDir="D:\GitLab\c3tekclient\C3TekClientAutoUpdate\obj\Release" baseDir="D:\GitLab\c3tekclient\C3TekClientAutoUpdate\obj\Release" xmlns="http://confuser.codeplex.com">
+<rule pattern="true" />
+<module path="C3TekClientAutoUpdate.exe">
+<rule pattern="true">
+<protection id="anti ildasm" />
+<protection id="anti tamper" />
+<protection id="ctrl flow" />
+<protection id="anti dump" />
+<protection id="invalid metadata" />
+<protection id = "rename" >
+<argument name = "mode" value = "decodable" />
+<argument name = "renPublic" value = "false" />
+<argument name = "renEnum" value = "false" />
+<argument name = "renameArgs" value = "false" />
+</protection >
+</rule>
+</module>
+<probePath>..\..\Dlls</probePath>
+<probePath>..\..\..\packages\Newtonsoft.Json.12.0.3\lib\net45</probePath>
+<probePath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2</probePath>
+</project>

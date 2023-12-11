@@ -1,0 +1,1 @@
+put C:\xampp_7_3_20\htdocs\www\update\version.json -cacl:public-read-write

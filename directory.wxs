@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="TARGETDIR">
+            <Directory Id="dir798073671A74E33D6A440CDC84F2A389" Name="docs">
+                <Directory Id="dir6D03D7FCE77491930E7C26EF3A754B74" Name="mock_api">
+                    <Component Id="cmp9A7DD74187BA784D0A94BBC8BA79A528" Guid="{1C759D8D-F36A-4269-AF1A-73E4C6641FA6}">
+                        <File Id="fil7E1E9D775E43EBD1C857FE36F1181EDA" KeyPath="yes" Source="SourceDir\mock_api\data_consume_url.json" />
+                    </Component>
+                </Directory>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+</Wix>

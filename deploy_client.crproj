@@ -1,0 +1,13 @@
+<project outputDir="D:\publish_project\update_client\c3tekclient\C3TekClient\bin\x86\Debug\Confused" baseDir="D:\publish_project\update_client\c3tekclient\C3TekClient\bin\x86\Debug" xmlns="http://confuser.codeplex.com">
+  <module path="C3TekClient.exe">
+    <rule pattern="true" inherit="false">
+      <protection id="anti ildasm" />
+      <protection id="anti tamper" />
+      <protection id="anti dump" />
+      <protection id="ctrl flow" />
+      <protection id="anti debug" />
+      <protection id="invalid metadata" />
+      <protection id="resources" />
+    </rule>
+  </module>
+</project>

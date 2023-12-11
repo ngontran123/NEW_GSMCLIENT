@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define C3TekClient_TargetDir=$(var.C3TekClient.TargetDir)?><?define PDUConverter_TargetDir=$(var.PDUConverter.TargetDir)?><?define C3TekClientAutoUpdate_TargetDir=$(var.C3TekClientAutoUpdate.TargetDir)?>
+	<Product Id="*" Name="SingleC3TekClientSetup" Language="1033" Version="1.0.0.0" Manufacturer="c3tek" UpgradeCode="e0cfce4e-4bd4-41d5-a0bd-a7af3cd6f1d4">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+		<Icon Id="c3Tek.ico" SourceFile="$(var.ProjectDir)c3Tek.ico" />
+		<Property Id="ARPPRODUCTICON" Value="c3Tek.ico" />
+
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\license.rtf" />
+		
+		<UIRef Id="WixUI_Minimal" />
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="SingleC3TekClientSetup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="ApplicationShortcut" />
+			<ComponentRef Id="ApplicationShortcutDesktop" />
+			<ComponentRef Id="mau_ussd.xlsx" />
+			<ComponentRef Id="mau_call.xlsx" />
+			<ComponentRef Id="mau_sms.xlsx" />
+			
+		</Feature>
+	</Product>
+	
+	
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			
+			
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SingleC3TekClientSetup">
+					
+					<Directory Id="en_US" Name="en-US" />
+					<Directory Id="vi_VN" Name="vi-VN" />
+					
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="C3TekClient" />
+			</Directory>
+			<Directory Id="DesktopFolder" Name="Desktop" />
+
+		
+
+		</Directory>
+	</Fragment>
+
+
+	<Fragment>
+		
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="c3Tek.ico" Guid="5760c928-3b17-4b82-b24e-e5853ba7dae2">
+			  <File Id="c3Tek.ico" Name="c3Tek.ico" Source="$(var.C3TekClient_TargetDir)c3Tek.ico" />
+			</Component>
+			<Component Id="DevExpress.CodeParser.v20.2.dll" Guid="f789f180-562c-4152-a8f8-cdec6f24dd25">
+			  <File Id="DevExpress.CodeParser.v20.2.dll" Name="DevExpress.CodeParser.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.CodeParser.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraLayout.v20.2.dll" Guid="0bb56e7d-5aab-41dd-8138-2eafa92501c5">
+			  <File Id="DevExpress.XtraLayout.v20.2.dll" Name="DevExpress.XtraLayout.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.XtraLayout.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.Office.v20.2.Core.dll" Guid="acac3bbd-c56a-487f-b087-0d60832c90a0">
+			  <File Id="DevExpress.Office.v20.2.Core.dll" Name="DevExpress.Office.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Office.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.BonusSkins.v20.2.dll" Guid="f645fcf3-09dc-477a-b6cc-e84251137c77">
+			  <File Id="DevExpress.BonusSkins.v20.2.dll" Name="DevExpress.BonusSkins.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.BonusSkins.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.Data.v20.2.dll" Guid="f53befca-0ae3-43cc-b406-919ab4d3f0b9">
+			  <File Id="DevExpress.Data.v20.2.dll" Name="DevExpress.Data.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Data.v20.2.dll" />
+			</Component>
+			<Component Id="websocket_sharp.dll" Guid="0f88117b-90de-4876-bab9-d6d5ac739ae2">
+			  <File Id="websocket_sharp.dll" Name="websocket-sharp.dll" Source="$(var.C3TekClient_TargetDir)websocket-sharp.dll" />
+			</Component>
+			<Component Id="DevExpress.Spreadsheet.v20.2.Core.dll" Guid="702c257a-2bc2-4867-a70d-8338f1db4b8f">
+			  <File Id="DevExpress.Spreadsheet.v20.2.Core.dll" Name="DevExpress.Spreadsheet.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Spreadsheet.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.Docs.v20.2.dll" Guid="ef1db50a-647e-4fa0-9692-cda8170c7d01">
+			  <File Id="DevExpress.Docs.v20.2.dll" Name="DevExpress.Docs.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Docs.v20.2.dll" />
+			</Component>
+			<Component Id="WinKernel.dll" Guid="7a3ee226-8ea5-403a-b603-17cbc7435037">
+			  <File Id="WinKernel.dll" Name="WinKernel.dll" Source="$(var.C3TekClient_TargetDir)WinKernel.dll" />
+			</Component>
+			<Component Id="PDUConverter.dll" Guid="c2b230a1-5027-42f3-8224-b2681864423b">
+			  <File Id="PDUConverter.dll" Name="PDUConverter.dll" Source="$(var.PDUConverter_TargetDir)PDUConverter.dll" />
+			</Component>
+			<Component Id="Newtonsoft.Json.dll" Guid="8c4860be-f372-4583-82b6-b962ba57693d">
+			  <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.C3TekClient_TargetDir)Newtonsoft.Json.dll" />
+			</Component>
+			<Component Id="ChilkatDotNet45.dll" Guid="48a89317-8121-47ac-bc48-62d82a9f7345">
+			  <File Id="ChilkatDotNet45.dll" Name="ChilkatDotNet45.dll" Source="$(var.C3TekClient_TargetDir)ChilkatDotNet45.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraGrid.v20.2.dll" Guid="e55c35da-e482-413e-b71c-fe26e21f1a52">
+			  <File Id="DevExpress.XtraGrid.v20.2.dll" Name="DevExpress.XtraGrid.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.XtraGrid.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraEditors.v20.2.dll" Guid="35340e9c-2392-4750-8278-db32c73b6910">
+			  <File Id="DevExpress.XtraEditors.v20.2.dll" Name="DevExpress.XtraEditors.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.XtraEditors.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.Utils.v20.2.dll" Guid="ab6c54ef-10b6-4782-827b-9cb87562b745">
+			  <File Id="DevExpress.Utils.v20.2.dll" Name="DevExpress.Utils.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Utils.v20.2.dll" />
+			</Component>
+			<Component Id="C3TekClient.exe.config" Guid="a302fbc0-622d-4002-a078-10e62ebe50f5">
+			  <File Id="C3TekClient.exe.config" Name="C3TekClient.exe.config" Source="$(var.C3TekClient_TargetDir)C3TekClient.exe.config" />
+			</Component>
+			<Component Id="C3TekClient.exe" Guid="1a2aa22b-620c-41ab-959c-466ea4e61c56">
+			  <File Id="C3TekClient.exe" Name="C3TekClient.exe" Source="$(var.C3TekClient_TargetDir)C3TekClient.exe" />
+			</Component>
+			<Component Id="DevExpress.Data.Desktop.v20.2.dll" Guid="9bb80518-b56e-49b6-bfd1-2c2792d265be">
+			  <File Id="DevExpress.Data.Desktop.v20.2.dll" Name="DevExpress.Data.Desktop.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Data.Desktop.v20.2.dll" />
+			</Component>
+			<Component Id="DotNetZip.dll" Guid="10f6f6f4-f520-42e1-a704-4431f5762549">
+			  <File Id="DotNetZip.dll" Name="DotNetZip.dll" Source="$(var.C3TekClientAutoUpdate_TargetDir)DotNetZip.dll" />
+			</Component>
+			<Component Id="C3TekClientAutoUpdate.exe.config" Guid="d45169f9-28c1-446f-a485-bc2b0a8040cf">
+			  <File Id="C3TekClientAutoUpdate.exe.config" Name="C3TekClientAutoUpdate.exe.config" Source="$(var.C3TekClientAutoUpdate_TargetDir)C3TekClientAutoUpdate.exe.config" />
+			</Component>
+			<Component Id="C3TekClientAutoUpdate.exe" Guid="56ced090-3b94-4e8c-ba88-b679e19b96cf">
+			  <File Id="C3TekClientAutoUpdate.exe" Name="C3TekClientAutoUpdate.exe" Source="$(var.C3TekClientAutoUpdate_TargetDir)C3TekClientAutoUpdate.exe" />
+			</Component>
+			<Component Id="DevExpress.Printing.v20.2.Core.dll" Guid="a11378f1-9170-476a-bbee-4d304f1a4208">
+			  <File Id="DevExpress.Printing.v20.2.Core.dll" Name="DevExpress.Printing.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Printing.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.Sparkline.v20.2.Core.dll" Guid="f7ab6809-7f36-410a-93fb-e0b877b15af4">
+			  <File Id="DevExpress.Sparkline.v20.2.Core.dll" Name="DevExpress.Sparkline.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Sparkline.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.RichEdit.v20.2.Core.dll" Guid="cab8d468-b00b-4a2c-85d3-9e15815345a9">
+			  <File Id="DevExpress.RichEdit.v20.2.Core.dll" Name="DevExpress.RichEdit.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.RichEdit.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraTreeList.v20.2.dll" Guid="990cd5c6-1841-4874-b80a-a35be99bbc89">
+			  <File Id="DevExpress.XtraTreeList.v20.2.dll" Name="DevExpress.XtraTreeList.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.XtraTreeList.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraPrinting.v20.2.dll" Guid="a4bba625-b628-4663-b5f3-02c151c11aaf">
+			  <File Id="DevExpress.XtraPrinting.v20.2.dll" Name="DevExpress.XtraPrinting.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.XtraPrinting.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.Pdf.v20.2.Drawing.dll" Guid="a3c1c71e-27dc-4db8-a014-4c4dfb797541">
+			  <File Id="DevExpress.Pdf.v20.2.Drawing.dll" Name="DevExpress.Pdf.v20.2.Drawing.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Pdf.v20.2.Drawing.dll" />
+			</Component>
+			<Component Id="DevExpress.DataVisualization.v20.2.Core.dll" Guid="fda4cd58-bb74-4894-a098-b5275e7bb918">
+			  <File Id="DevExpress.DataVisualization.v20.2.Core.dll" Name="DevExpress.DataVisualization.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.DataVisualization.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.Snap.v20.2.Core.dll" Guid="f8f924c2-43c6-4f4e-8d0c-62f9f31cda1c">
+			  <File Id="DevExpress.Snap.v20.2.Core.dll" Name="DevExpress.Snap.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Snap.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.DataAccess.v20.2.dll" Guid="010ad515-e1e3-433c-905e-379fdde73c8b">
+			  <File Id="DevExpress.DataAccess.v20.2.dll" Name="DevExpress.DataAccess.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.DataAccess.v20.2.dll" />
+			</Component>
+			<!--<Component Id="C3TekClient.pdb" Guid="af16df62-1f84-4631-9192-4513997daf4e">
+			  <File Id="C3TekClient.pdb" Name="C3TekClient.pdb" Source="$(var.C3TekClient_TargetDir)C3TekClient.pdb" />
+			</Component>
+			<Component Id="PDUConverter.pdb" Guid="98332d2d-92dc-4d3e-8f98-7fe9a2dd169f">
+			  <File Id="PDUConverter.pdb" Name="PDUConverter.pdb" Source="$(var.PDUConverter_TargetDir)PDUConverter.pdb" />
+			</Component>-->
+			<Component Id="DevExpress.Xpo.v20.2.dll" Guid="53747532-989c-4e8d-8c21-c49218659e20">
+			  <File Id="DevExpress.Xpo.v20.2.dll" Name="DevExpress.Xpo.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Xpo.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.Pdf.v20.2.Core.dll" Guid="02a6f9e6-b8f5-4244-94bf-0dcf9ac1d772">
+			  <File Id="DevExpress.Pdf.v20.2.Core.dll" Name="DevExpress.Pdf.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Pdf.v20.2.Core.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraCharts.v20.2.dll" Guid="72bb3ac7-8e77-44f3-9004-b14862d1805c">
+			  <File Id="DevExpress.XtraCharts.v20.2.dll" Name="DevExpress.XtraCharts.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.XtraCharts.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.XtraBars.v20.2.dll" Guid="715b86c1-a9b4-4899-88d5-b50d1ba69f0c">
+			  <File Id="DevExpress.XtraBars.v20.2.dll" Name="DevExpress.XtraBars.v20.2.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.XtraBars.v20.2.dll" />
+			</Component>
+			<Component Id="DevExpress.Charts.v20.2.Core.dll" Guid="0549c24c-7458-49f8-8c2e-7333650c1882">
+			  <File Id="DevExpress.Charts.v20.2.Core.dll" Name="DevExpress.Charts.v20.2.Core.dll" Source="$(var.C3TekClient_TargetDir)DevExpress.Charts.v20.2.Core.dll" />
+			</Component>
+			
+			
+			<Component Id="mau_call.xlsx" Guid="{AD4D06EA-D07E-4EAF-A5EE-982A137D9881}">
+				<File Id="mau_call.xlsx" KeyPath="yes" Source="ExcelData\mau_call.xlsx" />
+            </Component>
+            <Component Id="mau_sms.xlsx" Guid="{4309790B-AD50-4B46-B064-F37B74BE308E}">
+                <File Id="mau_sms.xlsx" KeyPath="yes" Source="ExcelData\mau_sms.xlsx" />
+            </Component>
+            <Component Id="mau_ussd.xlsx" Guid="{897E2D51-4516-41E6-806E-7090F5C9ED32}">
+                <File Id="mau_ussd.xlsx" KeyPath="yes" Source="ExcelData\mau_ussd.xlsx" />
+            </Component>
+			
+			
+			
+
+		</ComponentGroup>
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="ApplicationShortcut" Guid="9bd13330-6540-406f-a3a8-d7f7c69ae7f9">
+				<Shortcut Id="ApplicationStartMenuShortcut" Name="C3TekClient" Description="C3Tek Client" Target="[INSTALLFOLDER]C3TekClient.exe" WorkingDirectory="INSTALLFOLDER" />
+				<RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+				<RegistryValue Root="HKCU" Key="Software\C3TekClient" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+		<DirectoryRef Id="DesktopFolder">
+			<Component Id="ApplicationShortcutDesktop" Guid="cde1e030-eb64-49a5-b7b8-400b379c2d1a">
+				<Shortcut Id="ApplicationDesktopShortcut" Name="C3TekClient" Description="C3Tek Client" Target="[INSTALLFOLDER]C3TekClient.exe" WorkingDirectory="INSTALLFOLDER" />
+				<RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
+				<RegistryValue Root="HKCU" Key="Software\C3TekClient" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+	
+			
+
+	</Fragment>
+</Wix>

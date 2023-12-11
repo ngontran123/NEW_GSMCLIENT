@@ -1,0 +1,23 @@
+﻿DTAc sim du lich thai lan
+
+AT+COPS?
+
++COPS: 0,0,"DTAC"
+
+=== Lấy sim
+
+OK
+AT+CUSD=1,"*102*9#",15
+
++CUSD: 2,"0816144755 register by ID ending with 6875",15
+
+
+
+
+=== Lấy số tiền
+
+AT+CUSD=1,"*101*9#",15
+
++CUSD: 1,"Your balance is 20.00 Baht, valid until 15/03/22.
+Net1GB+ Free YouTube TikTok 15B/12Hrs Press1",15
+OK

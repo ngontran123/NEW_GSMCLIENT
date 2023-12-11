@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="TARGETDIR">
+            <Directory Id="dirD03EF564DA31F2781EE15C9AA21A5A3C" Name="ExcelData">
+                <Component Id="cmp28D03A7AE824A778D2AAE0ED48AD8CD7" Guid="{AD4D06EA-D07E-4EAF-A5EE-982A137D9881}">
+                    <File Id="filAC4772875BF95ED000E82BEBB6A0C2DA" KeyPath="yes" Source="SourceDir\mau_call.xlsx" />
+                </Component>
+                <Component Id="cmp36B045DE896A07F6FA2AEF8D38C83810" Guid="{4309790B-AD50-4B46-B064-F37B74BE308E}">
+                    <File Id="fil853D3100648D4E7DB1995A0A89A771A6" KeyPath="yes" Source="SourceDir\mau_sms.xlsx" />
+                </Component>
+                <Component Id="cmp0D4D762A0E82ED352554D2009DBF8FCC" Guid="{897E2D51-4516-41E6-806E-7090F5C9ED32}">
+                    <File Id="fil2123B3A5E8838B3B19D5AD29C37FB856" KeyPath="yes" Source="SourceDir\mau_ussd.xlsx" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+</Wix>
